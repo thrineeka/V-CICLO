@@ -1,85 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity"
-android:padding="16dp">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-<!-- Nombre -->
-<TextView
-    android:id="@+id/text_nombre"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/nombre"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+    <TextView
+        android:id="@+id/text_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE" />
 
-<EditText
-    android:id="@+id/edit_nombre"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:hint="Ingresa tu nombre"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/text_nombre"
-    app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/edit_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_nombre"
+            android:layout_marginTop="1dp"
+            android:hint="Ingresa tu nombre" />
 
-<!-- Empresa -->
-<TextView
-    android:id="@+id/text_empresa"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/empresa"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/edit_nombre" />
+        <TextView
+        android:id="@+id/text_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_nombre"
+        android:text="EMPRESA" />
+    <EditText
+        android:id="@+id/edit_empresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_empresa"
+        android:hint="Ingresa la empresa" />
+    <TextView
+        android:id="@+id/text_proposito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_empresa"
+        android:text="PROPOSITO DE VISITA" />
+        <EditText
+            android:id="@+id/edit_proposito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_proposito"
+            android:hint="Propósito de la visita" />
 
-<EditText
-    android:id="@+id/edit_empresa"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:hint="Ingresa la empresa"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/text_empresa"
-    app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/btn_registrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_proposito"
+            android:layout_marginTop="14dp"
+                android:text="REGISTRAR" />
 
-<!-- Propósito -->
-<TextView
-    android:id="@+id/text_proposito"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/proposito"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/edit_empresa" />
-
-<EditText
-    android:id="@+id/edit_proposito"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:hint="Propósito de la visita"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/text_proposito"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-<!-- Botón Registrar -->
-<Button
-    android:id="@+id/btn_registrar"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="@string/registrar"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/edit_proposito"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-<!-- ListView -->
-<ListView
-    android:id="@+id/list_visitas"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/btn_registrar"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ListView
+            android:id="@+id/list_visitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_registrar"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
